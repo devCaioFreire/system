@@ -15,7 +15,7 @@ export default function RoutesApp() {
             <Route path='/register' element={<SignUp />} />
             <Route path='/dashboard' element={<Private> <Dashboard /> </Private>} />
             <Route path='/profile' element={<Private> <Profile /> </Private>} />
-            <Route path='/customers' element={<Customers />} />
+            <Route path='/customers' element={<Private> <Customers /> </Private>} />
         </Routes>
     )
 }

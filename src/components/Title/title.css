@@ -19,3 +19,10 @@
 .title-row svg {
     margin-left: 1rem;
 }
+
+@media (max-width: 700px) {
+    .title-row {
+        margin-top: 2rem;
+        width: 100%;
+    }
+}
