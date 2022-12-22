@@ -11,12 +11,12 @@ export default function SignUp() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const { SignUp } = useContext(AuthContext);
+    const { signUp } = useContext(AuthContext);
 
     function handleSubmit(e) {
         e.preventDefault();
         if (name && lastName && email && password !== '') {
-            SignUp(name, lastName, email, password);
+            signUp(name, lastName, email, password);
             setName('')
             setLastName('')
             setEmail('')

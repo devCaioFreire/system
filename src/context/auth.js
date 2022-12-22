@@ -84,8 +84,9 @@ export default function AuthProvider({ children }) {
                 let data = {
                     uid: uid,
                     name: userProfile.data().name,
+                    lastName: userProfile.data().lastName,
                     avatarUrl: userProfile.data().avatarUrl,
-                    email: value.data.email
+                    email: value.user.email
                 }
 
                 setUser(data);
@@ -99,14 +100,14 @@ export default function AuthProvider({ children }) {
             })
     }
 
-    async function SignOut() {
+    async function signOut() {
         await firebase.auth().signOut();
         localStorage.removeItem('SystemUser');
         setUser(null);
     }
 
     return (
-        <AuthContext.Provider value={{ signed: !!user, user, loading, signUp, signIn, SignOut }}>
+        <AuthContext.Provider value={{ signed: !!user, user, loading, signUp, signIn, signOut, setUser, storageUser }}>
             {children}
         </AuthContext.Provider>
     )

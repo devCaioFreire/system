@@ -13,9 +13,24 @@ export default function Header() {
 
     return (
         <div className="sidebar">
-            <div>
-                <span>header: </span>
+
+            <div className='image'>
+                <img src={user.avatarUrl == null ? avatar : user.avatarUrl} alt={avatar} />
             </div>
+
+            <Link to={'/dashboard'}>
+                <FiHome color='#fff' size={24} />
+                Chamados
+            </Link>
+            <Link to={'/customers'}>
+                <FiUser color='#fff' size={24} />
+                Clientes
+            </Link>
+            <Link to={'/profile'}>
+                <FiSettings color='#fff' size={24} />
+                Configuração
+            </Link>
+
         </div>
     )
 }
